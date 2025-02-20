@@ -1,0 +1,37 @@
+﻿@model AdilBooks.Models.AuthorDto
+
+@{
+    ViewData["Title"] = "Edit Author";
+}
+
+<h1>Edit Author</h1>
+
+<form method="post" asp-action="Update">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <input type="hidden" asp-for="AuthorId" />
+
+    <div class="form-group">
+        <label asp-for="Name" class="control-label">Name</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Bio" class="control-label">Biography</label>
+        <textarea asp-for="Bio" class="form-control"></textarea>
+        <span asp-validation-for="Bio" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Update Author</button>
+</form>
+
+<div>
+    <a asp-action="List">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
