@@ -53,63 +53,54 @@ namespace AdilBooks.Services
 
         public async Task<ServiceResponse> AddAuthor(AuthorDto authorDto)
         {
-            ServiceResponse serviceResponse = new();
+            Console.WriteLine($"🔹 Inside AddAuthor Service: Name={authorDto.Name}, Bio={authorDto.Bio}, Titles={authorDto.Titles}");
 
-            try
+            if (string.IsNullOrWhiteSpace(authorDto.Name))
             {
-                var author = new Author
-                {
-                    Name = authorDto.Name,
-                    Bio = authorDto.Bio
-                };
-
-                _context.Authors.Add(author);
-                await _context.SaveChangesAsync();
-
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Created;
-                serviceResponse.CreatedId = author.AuthorId;
-                serviceResponse.Messages.Add("Author added successfully.");
-                return serviceResponse;
+                Console.WriteLine("🚨 Name is empty!");
+                return new ServiceResponse(ServiceResponse.ServiceStatus.Error, new List<string> { "Name is required" });
             }
-            catch (Exception ex)
+
+            var author = new Author
             {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Error;
-                serviceResponse.Messages.Add($"An error occurred while adding the author: {ex.Message}");
-                return serviceResponse;
-            }
+                Name = authorDto.Name,
+                Bio = authorDto.Bio
+            };
+
+            _context.Authors.Add(author);
+            await _context.SaveChangesAsync(); // ✅ Save to database
+            Console.WriteLine("✅ Author successfully saved to database!");
+
+            return new ServiceResponse(ServiceResponse.ServiceStatus.Success);
         }
+
 
         public async Task<ServiceResponse> UpdateAuthor(AuthorDto authorDto)
         {
-            ServiceResponse serviceResponse = new();
-
-            try
+            var author = await _context.Authors.FindAsync(authorDto.AuthorId);
+            if (author == null)
             {
-                var author = await _context.Authors.FindAsync(authorDto.AuthorId);
-                if (author == null)
+                return new ServiceResponse
                 {
-                    serviceResponse.Status = ServiceResponse.ServiceStatus.NotFound;
-                    serviceResponse.Messages.Add("Author not found.");
-                    return serviceResponse;
-                }
-
-                author.Name = authorDto.Name;
-                author.Bio = authorDto.Bio;
-
-                _context.Entry(author).State = EntityState.Modified;
-                await _context.SaveChangesAsync();
-
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Updated;
-                serviceResponse.Messages.Add("Author updated successfully.");
-                return serviceResponse;
+                    Status = ServiceResponse.ServiceStatus.NotFound,
+                    Messages = new List<string> { "Author not found." }
+                };
             }
-            catch (Exception ex)
+
+            // Update fields
+            author.Name = authorDto.Name;
+            author.Bio = authorDto.Bio;
+
+            _context.Authors.Update(author);
+            await _context.SaveChangesAsync();
+
+            return new ServiceResponse
             {
-                serviceResponse.Status = ServiceResponse.ServiceStatus.Error;
-                serviceResponse.Messages.Add($"An error occurred while updating the author: {ex.Message}");
-                return serviceResponse;
-            }
+                Status = ServiceResponse.ServiceStatus.Updated,
+                Messages = new List<string> { "Author updated successfully!" }
+            };
         }
+
 
         public async Task<ServiceResponse> DeleteAuthor(int id)
         {

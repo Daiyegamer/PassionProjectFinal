@@ -264,7 +264,17 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AdilBooks.Controllers.AuthorPageController",
+    "ContainingType": "AdilBooks.Controllers.AuthorsPageController",
+    "Method": "Add",
+    "RelativePath": "Authors/Add",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "AdilBooks.Controllers.AuthorsPageController",
     "Method": "Add",
     "RelativePath": "Authors/Add",
     "HttpMethod": "POST",
@@ -295,17 +305,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AdilBooks.Controllers.AuthorPageController",
-    "Method": "Add",
-    "RelativePath": "Authors/Add",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": []
-  },
-  {
-    "ContainingType": "AdilBooks.Controllers.AuthorPageController",
+    "ContainingType": "AdilBooks.Controllers.AuthorsPageController",
     "Method": "ConfirmDelete",
     "RelativePath": "Authors/ConfirmDelete/{id}",
     "HttpMethod": "GET",
@@ -321,7 +321,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AdilBooks.Controllers.AuthorPageController",
+    "ContainingType": "AdilBooks.Controllers.AuthorsPageController",
     "Method": "Delete",
     "RelativePath": "Authors/Delete/{id}",
     "HttpMethod": "POST",
@@ -337,7 +337,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AdilBooks.Controllers.AuthorPageController",
+    "ContainingType": "AdilBooks.Controllers.AuthorsPageController",
     "Method": "Edit",
     "RelativePath": "Authors/Edit/{id}",
     "HttpMethod": "GET",
@@ -353,7 +353,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AdilBooks.Controllers.AuthorPageController",
+    "ContainingType": "AdilBooks.Controllers.AuthorsPageController",
     "Method": "Find",
     "RelativePath": "Authors/Find/{id}",
     "HttpMethod": "GET",
@@ -369,7 +369,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AdilBooks.Controllers.AuthorPageController",
+    "ContainingType": "AdilBooks.Controllers.AuthorsPageController",
     "Method": "List",
     "RelativePath": "Authors/List",
     "HttpMethod": "GET",
@@ -379,7 +379,7 @@
     "ReturnTypes": []
   },
   {
-    "ContainingType": "AdilBooks.Controllers.AuthorPageController",
+    "ContainingType": "AdilBooks.Controllers.AuthorsPageController",
     "Method": "Update",
     "RelativePath": "Authors/Update",
     "HttpMethod": "POST",

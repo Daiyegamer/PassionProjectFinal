@@ -6,9 +6,9 @@
 
 <h1>Edit Book</h1>
 
-<form asp-action="Update" method="post">
-    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-
+<form asp-action="Update" asp-controller="BooksPage" method="post">
+    <!-- ✅ Ensure the BookId is included as a hidden field -->
+    <input type="hidden" asp-for="BookId" />
     <!-- Title Field -->
     <div class="form-group">
         <label asp-for="Title" class="control-label font-weight-bold"></label>

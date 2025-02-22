@@ -16,7 +16,7 @@ namespace AdilBooks.Controllers
         private readonly IBookService _bookService;
         private readonly IAuthorService _authorService;
 
-        public BooksPageController(IBookService bookService, IAuthorService authorService)
+        public BooksPageController(IBookService bookService, IAuthorService authorService, IPublisherService publisherService)
         {
             _bookService = bookService;
             _authorService = authorService;  // Initialize _authorService

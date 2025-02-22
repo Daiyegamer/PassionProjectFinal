@@ -4,19 +4,25 @@ using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.EntityFrameworkCore;
+using AdilBooks.Services;
+using AdilBooks.Data;
 
 namespace AdilBooks.Controllers
 {
-    [Route("Authors")]
-    
-    public class AuthorPageController : Controller
-    {
-        private readonly IAuthorService _authorService;
 
-        // Constructor with dependency injection for AuthorService
-        public AuthorPageController(IAuthorService authorService)
+    [Route("Authors")]
+    public class AuthorsPageController : Controller
+    {
+        private readonly ApplicationDbContext _context;
+        private readonly IAuthorService _authorService;
+        private readonly IBookService _bookService;
+
+        public AuthorsPageController(ApplicationDbContext context, IAuthorService authorService, IBookService bookService)
         {
-            _authorService = authorService;
+            _context = context ?? throw new ArgumentNullException(nameof(context)); // ✅ Ensure _context is initialized
+            _authorService = authorService ?? throw new ArgumentNullException(nameof(authorService));
+            _bookService = bookService ?? throw new ArgumentNullException(nameof(bookService));
         }
 
         // GET: Authors/List
@@ -39,74 +45,104 @@ namespace AdilBooks.Controllers
         }
 
 
-        // POST: Authors/Add
-        [Authorize]
-        [HttpPost("Add")]
-        public async Task<IActionResult> Add(AuthorDto authorDto)
-        {
-            if (!ModelState.IsValid)
-            {
-                return View("Add", authorDto);  // Stay on Add page with errors if input is invalid
-            }
 
-            ServiceResponse response = await _authorService.AddAuthor(authorDto);
-            if (response.Status == ServiceResponse.ServiceStatus.Error)
-            {
-                return View("Error", new ErrorViewModel { Errors = response.Messages });
-            }
-            TempData["SuccessMessage"] = "Author added successfully!";
-            return RedirectToAction("Find", new { id = response.CreatedId });
-        }
 
         // GET: Authors/Add
         [HttpGet("Add")]
         public IActionResult Add()
         {
-            return View(); // Renders the "Add" form (Views/Authors/Add.cshtml)
+            return View(new AuthorDto()); // ✅ Ensure a model is sent
+        }
+        [Authorize]
+        [HttpPost("Add")]
+        [ValidateAntiForgeryToken] // ✅ Prevent CSRF Attacks
+        public async Task<IActionResult> Add(AuthorDto authorDto)
+        {
+            Console.WriteLine($"🔹 Received Add Request: Name={authorDto.Name}, Bio={authorDto.Bio}, Titles={authorDto.Titles}");
+
+            if (!ModelState.IsValid)
+            {
+                Console.WriteLine("🚨 ModelState is INVALID!");
+                foreach (var key in ModelState.Keys)
+                {
+                    foreach (var error in ModelState[key].Errors)
+                    {
+                        Console.WriteLine($"❌ Model Error - {key}: {error.ErrorMessage}");
+                    }
+                }
+                return View("Add", authorDto); // ✅ Return with validation errors
+            }
+
+            var response = await _authorService.AddAuthor(authorDto);
+            Console.WriteLine($"🔹 Service Response: {response.Status}");
+
+            if (response.Status == ServiceResponse.ServiceStatus.Error)
+            {
+                Console.WriteLine($"❌ Error Messages: {string.Join(", ", response.Messages)}");
+                return View("Error", new ErrorViewModel { Errors = response.Messages });
+            }
+
+            Console.WriteLine("✅ Author added successfully!");
+            TempData["SuccessMessage"] = "Author added successfully!";
+            return RedirectToAction("List");
         }
 
-        // GET: Authors/Edit/{id}
+
         [HttpGet("Edit/{id}")]
         public async Task<IActionResult> Edit(int id)
         {
-            AuthorDto author = await _authorService.FindAuthor(id);
+            var author = await _authorService.FindAuthor(id);
             if (author == null)
             {
-                return View("Error", new ErrorViewModel { Errors = new List<string> { "Author not found." } });
+                return NotFound();
             }
-            return View(author); // Looks for Views/Authors/Edit.cshtml
+
+            return View(author);
         }
 
-        // POST: Authors/Update
-        [Authorize]
         [HttpPost("Update")]
+        [ValidateAntiForgeryToken] // ✅ Prevent CSRF attacks
         public async Task<IActionResult> Update(AuthorDto authorDto)
         {
             if (!ModelState.IsValid)
             {
+                Console.WriteLine("🚨 ModelState is Invalid!"); // Debugging
                 return View("Edit", authorDto);
             }
 
-            ServiceResponse response = await _authorService.UpdateAuthor(authorDto);
-            if (response.Status == ServiceResponse.ServiceStatus.Error || response.Status == ServiceResponse.ServiceStatus.NotFound)
+            Console.WriteLine($"✅ Updating Author: {authorDto.AuthorId}, Name: {authorDto.Name}"); // Debugging
+
+            var response = await _authorService.UpdateAuthor(authorDto);
+            if (response.Status == ServiceResponse.ServiceStatus.Error)
             {
                 return View("Error", new ErrorViewModel { Errors = response.Messages });
             }
+
             TempData["SuccessMessage"] = "Author updated successfully!";
-            return RedirectToAction("Find", new { id = authorDto.AuthorId });
+            return RedirectToAction("List");
         }
 
-        // GET: Authors/ConfirmDelete/{id}
+
+
+        // ✅ Add this method inside `AuthorsPageController.cs`
         [HttpGet("ConfirmDelete/{id}")]
         public async Task<IActionResult> ConfirmDelete(int id)
         {
-            AuthorDto author = await _authorService.FindAuthor(id);
+            var author = await _authorService.FindAuthor(id);
             if (author == null)
             {
-                return View("Error", new ErrorViewModel { Errors = new List<string> { "Author not found." } });
+                return NotFound(); // ✅ Return 404 if the author doesn't exist
             }
-            return View(author); // Looks for Views/Authors/ConfirmDelete.cshtml
+
+            return View(author); // ✅ Render `ConfirmDelete.cshtml` with author data
         }
+
+
+
+
+
+
+
 
         // POST: Authors/Delete/{id}
         [Authorize]
@@ -122,4 +158,5 @@ namespace AdilBooks.Controllers
             return RedirectToAction("List");
         }
     }
+
 }

@@ -11,7 +11,7 @@ using AdilBooks.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// ✅ Fix Duplicate DbContext Registration
+// ✅ Fix DbContext Configuration
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection")
     ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 
@@ -29,10 +29,10 @@ builder.Services.AddScoped<IBookService, BookService>();
 builder.Services.AddScoped<IAuthorService, AuthorService>();
 builder.Services.AddScoped<IPublisherService, PublisherService>();
 
-// ✅ Add MVC Controllers
+// ✅ Add Controllers with Views
 builder.Services.AddControllersWithViews();
 
-// ✅ Add Swagger with Authentication Support
+// ✅ Add Swagger
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>
 {
@@ -68,27 +68,23 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
-// ✅ Configure Middleware Order
+// ✅ Fix Middleware Order
 if (app.Environment.IsDevelopment())
 {
-    app.UseMigrationsEndPoint();
-    if (app.Environment.IsDevelopment())
+    try
     {
         app.UseMigrationsEndPoint();
         app.UseSwagger();
         app.UseSwaggerUI(c =>
         {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "The Reading Room API v1");
-            c.RoutePrefix = "swagger";
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "AdilBooks API v1");
+            c.RoutePrefix = "swagger"; // Swagger UI available at /swagger
         });
     }
-
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
+    catch (Exception ex)
     {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "AdilBooks API v1");
-        c.RoutePrefix = "swagger"; // Swagger UI available at /swagger
-    });
+        Console.WriteLine("🚨 Swagger Initialization Failed: " + ex.Message);
+    }
 }
 else
 {
@@ -96,20 +92,18 @@ else
     app.UseHsts();
 }
 
+
+// ✅ Important Middleware Order
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-app.UseAuthentication(); // ✅ Add Authentication
+app.UseAuthentication(); // 🔹 Place Before Authorization
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    endpoints.MapControllers();
-    endpoints.MapRazorPages();
-});
+app.MapControllers();
+app.MapRazorPages();
 
-// ✅ Fix Routing Conflicts
+// ✅ Fix Routing
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Home}/{action=Index}/{id?}");
@@ -122,7 +116,7 @@ app.MapControllerRoute(
 app.MapControllerRoute(
     name: "authors",
     pattern: "Authors/{action=List}/{id?}",
-    defaults: new { controller = "AuthorPage" });
+    defaults: new { controller = "AuthorsPage" });
 
 app.MapControllerRoute(
     name: "publishers",
