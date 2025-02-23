@@ -3,24 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\views\\authorspage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:views\\authorspage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\views\\authorspage\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:views\\authorspage\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\controllers\\authorspagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:controllers\\authorspagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\services\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:services\\authorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\models\\serviceresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:models\\serviceresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:controllers\\bookscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\controllers\\authorspagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:controllers\\authorspagecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\interfaces\\iauthorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:interfaces\\iauthorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:models\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\views\\authorspage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:views\\authorspage\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:services\\bookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\views\\authorspage\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|solutionrelative:views\\authorspage\\add.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B760AE66-ABFC-4511-BFCE-01154E17B77D}|AdilBooks.csproj|c:\\users\\fahad\\onedrive - humber polytechnic\\desktop\\backend 2\\mvp with services final\\passionprojectfinal\\passionproject\\adilbooks\\models\\author.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -42,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 13,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,31 +70,72 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ServiceResponse.cs",
-              "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Models\\ServiceResponse.cs",
-              "RelativeDocumentMoniker": "Models\\ServiceResponse.cs",
-              "ToolTip": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Models\\ServiceResponse.cs",
-              "RelativeToolTip": "Models\\ServiceResponse.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAiwDMAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "BooksController.cs",
+              "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Controllers\\BooksController.cs",
+              "RelativeDocumentMoniker": "Controllers\\BooksController.cs",
+              "ToolTip": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Controllers\\BooksController.cs",
+              "RelativeToolTip": "Controllers\\BooksController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAqwAoAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T22:46:12.279Z"
+              "WhenOpened": "2025-02-23T02:48:59.01Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
+              "Title": "Book.cs",
+              "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Models\\Book.cs",
+              "RelativeDocumentMoniker": "Models\\Book.cs",
+              "ToolTip": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Models\\Book.cs",
+              "RelativeToolTip": "Models\\Book.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-23T00:03:52.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IAuthorService.cs",
+              "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Interfaces\\IAuthorService.cs",
+              "RelativeDocumentMoniker": "Interfaces\\IAuthorService.cs",
+              "ToolTip": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Interfaces\\IAuthorService.cs",
+              "RelativeToolTip": "Interfaces\\IAuthorService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T23:58:51.492Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BookService.cs",
+              "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Services\\BookService.cs",
+              "RelativeDocumentMoniker": "Services\\BookService.cs",
+              "ToolTip": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Services\\BookService.cs",
+              "RelativeToolTip": "Services\\BookService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-22T23:48:47.315Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "AuthorService.cs",
               "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Services\\AuthorService.cs",
               "RelativeDocumentMoniker": "Services\\AuthorService.cs",
               "ToolTip": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Services\\AuthorService.cs",
               "RelativeToolTip": "Services\\AuthorService.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAwwEsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGkAAAAAAAAAAAAqwH8AAABGAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T22:44:21.677Z"
+              "WhenOpened": "2025-02-22T22:44:21.677Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "Author.cs",
               "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Models\\Author.cs",
               "RelativeDocumentMoniker": "Models\\Author.cs",
@@ -94,7 +147,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -106,7 +159,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 7,
               "Title": "Add.cshtml",
               "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Views\\AuthorsPage\\Add.cshtml",
               "RelativeDocumentMoniker": "Views\\AuthorsPage\\Add.cshtml",
@@ -118,7 +171,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
@@ -130,28 +183,29 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 5,
               "Title": "Edit.cshtml",
               "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Views\\AuthorsPage\\Edit.cshtml",
               "RelativeDocumentMoniker": "Views\\AuthorsPage\\Edit.cshtml",
               "ToolTip": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Views\\AuthorsPage\\Edit.cshtml",
               "RelativeToolTip": "Views\\AuthorsPage\\Edit.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACAAAAAKAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAswC0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-02-22T18:46:23.986Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 0,
               "Title": "AuthorsPageController.cs",
               "DocumentMoniker": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Controllers\\AuthorsPageController.cs",
               "RelativeDocumentMoniker": "Controllers\\AuthorsPageController.cs",
-              "ToolTip": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Controllers\\AuthorsPageController.cs",
-              "RelativeToolTip": "Controllers\\AuthorsPageController.cs",
-              "ViewState": "AgIAADcAAAAAAAAAAAAAAFgAAAAAAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\fahad\\OneDrive - Humber Polytechnic\\Desktop\\Backend 2\\MVP WITH SERVICES final\\PassionProjectFinal\\PassionProject\\AdilBooks\\Controllers\\AuthorsPageController.cs*",
+              "RelativeToolTip": "Controllers\\AuthorsPageController.cs*",
+              "ViewState": "AgIAAHUAAAAAAAAAAAAqwIQAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-02-22T18:46:16.138Z"
+              "WhenOpened": "2025-02-22T18:46:16.138Z",
+              "EditorCaption": ""
             }
           ]
         }

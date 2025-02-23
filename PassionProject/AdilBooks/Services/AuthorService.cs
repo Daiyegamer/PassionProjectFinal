@@ -53,31 +53,41 @@ namespace AdilBooks.Services
 
         public async Task<ServiceResponse> AddAuthor(AuthorDto authorDto)
         {
-            Console.WriteLine($"🔹 Inside AddAuthor Service: Name={authorDto.Name}, Bio={authorDto.Bio}, Titles={authorDto.Titles}");
-
             if (string.IsNullOrWhiteSpace(authorDto.Name))
             {
-                Console.WriteLine("🚨 Name is empty!");
-                return new ServiceResponse(ServiceResponse.ServiceStatus.Error, new List<string> { "Name is required" });
+                return new ServiceResponse
+                {
+                    Status = ServiceResponse.ServiceStatus.Error,
+                    Messages = new List<string> { "Author name is required." }
+                };
             }
 
-            var author = new Author
+            // ✅ Ensure Titles has a default value to avoid null errors
+            authorDto.Titles = string.IsNullOrWhiteSpace(authorDto.Titles) ? "None" : authorDto.Titles.Trim();
+
+            var newAuthor = new Author
             {
-                Name = authorDto.Name,
-                Bio = authorDto.Bio
+                Name = authorDto.Name.Trim(),
+                Bio = authorDto.Bio?.Trim() ?? "Biography not provided",
             };
 
-            _context.Authors.Add(author);
-            await _context.SaveChangesAsync(); // ✅ Save to database
-            Console.WriteLine("✅ Author successfully saved to database!");
+            // ✅ Add author to the database
+            _context.Authors.Add(newAuthor);
+            await _context.SaveChangesAsync();
 
-            return new ServiceResponse(ServiceResponse.ServiceStatus.Success);
+            return new ServiceResponse
+            {
+                Status = ServiceResponse.ServiceStatus.Created,
+                CreatedId = newAuthor.AuthorId,
+                Messages = new List<string> { "Author added successfully." }
+            };
         }
 
 
         public async Task<ServiceResponse> UpdateAuthor(AuthorDto authorDto)
         {
-            var author = await _context.Authors.FindAsync(authorDto.AuthorId);
+            var author = await _context.Authors.FirstOrDefaultAsync(a => a.AuthorId == authorDto.AuthorId);
+
             if (author == null)
             {
                 return new ServiceResponse
@@ -87,11 +97,13 @@ namespace AdilBooks.Services
                 };
             }
 
-            // Update fields
+            // ✅ Update Author Details
             author.Name = authorDto.Name;
             author.Bio = authorDto.Bio;
 
-            _context.Authors.Update(author);
+            // ✅ Set a default "None" for Titles but do NOT update books
+            authorDto.Titles = "None";
+
             await _context.SaveChangesAsync();
 
             return new ServiceResponse
@@ -100,6 +112,7 @@ namespace AdilBooks.Services
                 Messages = new List<string> { "Author updated successfully!" }
             };
         }
+
 
 
         public async Task<ServiceResponse> DeleteAuthor(int id)

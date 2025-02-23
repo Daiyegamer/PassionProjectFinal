@@ -99,20 +99,18 @@ namespace AdilBooks.Controllers
 
             return View(author);
         }
-
+        [Authorize]
         [HttpPost("Update")]
-        [ValidateAntiForgeryToken] // ✅ Prevent CSRF attacks
+        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Update(AuthorDto authorDto)
         {
             if (!ModelState.IsValid)
             {
-                Console.WriteLine("🚨 ModelState is Invalid!"); // Debugging
                 return View("Edit", authorDto);
             }
 
-            Console.WriteLine($"✅ Updating Author: {authorDto.AuthorId}, Name: {authorDto.Name}"); // Debugging
+            var response = await _authorService.UpdateAuthor(authorDto); // ✅ Only pass authorDto
 
-            var response = await _authorService.UpdateAuthor(authorDto);
             if (response.Status == ServiceResponse.ServiceStatus.Error)
             {
                 return View("Error", new ErrorViewModel { Errors = response.Messages });
@@ -123,23 +121,16 @@ namespace AdilBooks.Controllers
         }
 
 
-
-        // ✅ Add this method inside `AuthorsPageController.cs`
         [HttpGet("ConfirmDelete/{id}")]
         public async Task<IActionResult> ConfirmDelete(int id)
         {
             var author = await _authorService.FindAuthor(id);
             if (author == null)
             {
-                return NotFound(); // ✅ Return 404 if the author doesn't exist
+                return NotFound(); // Show 404 page if author doesn't exist
             }
-
-            return View(author); // ✅ Render `ConfirmDelete.cshtml` with author data
+            return View(author); // Render ConfirmDelete.cshtml
         }
-
-
-
-
 
 
 
